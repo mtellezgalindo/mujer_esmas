@@ -1,0 +1,170 @@
+<?php global $dax_type; ?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<title>Esmas|Mujer</title>
+	<meta name="viewport" content="width=320; user-scalable=0;">
+	<!--meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" /-->
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+	<meta http-equiv="PRAGMA" content="NO-CACHE">
+	<meta http-equiv="EXPIRES" content="0">
+	<link rel="stylesheet" type="text/css" href="http://i2.esmas.com/iphone/css/iphone.css">
+	<link rel="stylesheet" type="text/css" href="http://i2.esmas.com/iphone/css/muj.css">
+	<link rel="stylesheet" type="text/css" href="http://i2.esmas.com/televisa/m/css/mobile_menu_superior_nav_5.css" />
+	<link rel="apple-touch-icon" href="http://i2.esmas.com/iphone/img/ico_esmas.png">
+	<script src="http://i2.esmas.com/iphone/js/iphone.js" type="text/javascript" language="JavaScript"></script>
+	<script type='text/javascript' src='http://lads.esmas.com/openx-2.6.3/www/delivery/spcjs.php?id=123'></script>
+	<script type="text/javascript" src="http://i2.esmas.com/televisa/m.video/js/iscroll.js"></script>
+	<script type="text/javascript">
+		var myScroll;
+		function loaded() {
+			myScroll = new iScroll('wrapperMenuSup', { hScrollbar: false});
+		}
+		document.addEventListener('DOMContentLoaded', loaded, false);
+	</script>	
+	<!-- Libs para Banner fijo -->
+	<link rel="stylesheet"  href="http://i2.esmas.com/iphone/ad_iphone/css/jquery.mobile-1.0a4_basic.css" />  
+	{SWITCH:START:COUNTRY_CODE}
+    {CASE:US}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    {CASE:BREAK} 
+    {CASE:DEFAULT}
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script> 
+    {CASE:BREAK}
+	{SWITCH:END}
+	<script type="text/javascript" src="http://i2.esmas.com/iphone/ad_iphone/js/jquery.mobile-1.0a4.min.js"></script> 
+	<!-- Libs para Banner fijo -->
+	
+</head>
+<body>
+<?php
+//-- Begin DAx code --
+$dax_type = 'm';
+path_include ("esmas_path/comscore/daxheader.php");
+//-- End DAx code --
+?>
+<script type="text/javascript">
+	$('#wrapperMenuSup').bind(function(){
+				$('.arrowLeft').hide();
+				$('#scrollerMenuSup').taphold(function(){//Aqui tenía el evento mouseup
+					var pos_left = $('#scroller').offset();
+						if (pos_left.left < 0){
+							$('.arrowLeft').show(300);
+							$('.arrowRight').hide(300);
+						}
+						if (pos_left.left >= 1){
+							$('.arrowRight').toggle(300);
+							$('.arrowLeft').toggle(300);
+						}			
+				});
+			});
+</script>
+<div id="wrapper" data-role="page">
+    {SWITCH:START:COUNTRY_CODE}
+	{CASE:US}
+		<?php 
+			$colorTitulo = "mujer";
+			include '/nfs/content/headers/header_us_2014.php';				
+		?>
+	{CASE:BREAK} 		
+{SWITCH:END}
+    <div id="divBannerTakeOver"><?php include('../../iphone/mujer/belleza-y-moda/banner_takeover_320x44.php'); ?></div>
+    <div id="divBannerTop"><?php include('../../iphone/mujer/belleza-y-moda/banner_top_320x44.php'); ?></div>
+	{SWITCH:START:COUNTRY_CODE}
+		{CASE:US}
+			
+		{CASE:BREAK} 
+		{CASE:DEFAULT}
+	<?
+		include '/nfs/cache/flat/mujer/mobile_menu_mujer_gral.html';
+	?>
+    {CASE:BREAK}
+	{SWITCH:END}
+	<div class="header_mujer">
+		<img src="http://i2.esmas.com/iphone/img/l_mujer.gif" width="320" height="42" alt="" border="0"> 
+	</div>
+	<div class="title">Belleza y Moda</div>
+	<div id="fullDate">
+		<a href="http://www2.esmas.com/mujer/belleza-y-moda/" title=""><img src="http://i2.esmas.com/iphone/img/bt_sitionormal.gif" width="110" height="25" alt="" border="0"></a>
+		<span><script>PrintDate();</script></span>
+	</div>
+	<ul class="headlines bkgArrow">
+		<li onClick="GoLink(this, '{ART:nota_princ:LINK:mobile}');">
+			<h2>{ART:nota_princ:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:nota_princ:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+	</ul>
+	<div class="title">Belleza</div>
+	<ul class="headlines bkgArrow">
+		<li onClick="GoLink(this, '{ART:belleza_nota1:LINK:mobile}');">
+			<h2>{ART:belleza_nota1:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:nota_princ:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li onClick="GoLink(this, '{ART:belleza_nota2:LINK:mobile}');">
+			<h2>{ART:belleza_nota2:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:belleza_nota2:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li class="noBottom" onClick="GoLink(this, '{ART:belleza_nota3:LINK:mobile}');">
+			<h2>{ART:belleza_nota3:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:belleza_nota3:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>
+	</ul>
+	<div class="title">Moda</div>
+	<ul class="headlines bkgArrow">
+		<li onClick="GoLink(this, '{ART:moda_nota1:LINK:mobile}');">
+			<h2>{ART:moda_nota1:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:moda_nota1:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li onClick="GoLink(this, '{ART:moda_nota2:LINK:mobile}');">
+			<h2>{ART:moda_nota2:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:moda_nota2:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li class="noBottom" onClick="GoLink(this, '{ART:moda_nota3:LINK:mobile}');">
+			<h2>{ART:moda_nota3:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:moda_nota3:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>
+	</ul>
+	<div class="title">Consejos</div>
+	<ul class="headlines bkgArrow">
+		<li onClick="GoLink(this, '{ART:consejos_nota1:LINK:mobile}');">
+			<h2>{ART:consejos_nota1:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:consejos_nota1:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li onClick="GoLink(this, '{ART:consejos_nota2:LINK:mobile}');">
+			<h2>{ART:consejos_nota2:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:consejos_nota2:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+		<li class="noBottom" onClick="GoLink(this, '{ART:consejos_nota3:LINK:mobile}');">
+			<h2>{ART:consejos_nota3:TITLE:editorial=yes}</h2>
+			<h5>Hace {ART:consejos_nota3:DURATION:anio/mes/dia/hora/min}</h5>
+		</li>	
+	</ul>
+	<?php include '../../iphone/mujer/fotogalerias.php'; ?>
+    <div id="divBannerMiddle"><?php include('../../iphone/mujer/belleza-y-moda/banner_middle_320x44.php'); ?></div>
+	{SWITCH:START:COUNTRY_CODE}
+		{CASE:US}
+			 <?php include '/nfs/cache/flat/footers/footer-us-2014.html';?>
+		{CASE:BREAK} 
+		{CASE:DEFAULT}
+			<?php include '../../iphone/mujer/canales_mujer.php'; ?>
+	       <?php include('../../iphone/canales_esmas.php');?>
+            <?php include('../../iphone/copyright.php');?>
+		{CASE:BREAK}
+	{SWITCH:END}
+    <?php include_once '../../iphone/mujer/belleza-y-moda/banner_flotante_320x44.php'; ?>
+</div>
+<script>
+var seccion = '<?php echo $colorTitulo; ?>';
+var sitiosAdaptative = true;
+</script>
+<script src="http://i2.esmas.com/js/televisa/us/copa-mundia-fifa-brasil-2014/header-copa-mundial.js"></script>
+<SCRIPT LANGUAGE='JavaScript1.2' SRC='http://www.esmas.com/scripts/esmas_stats.js' TYPE='text/javascript'></SCRIPT> 
+<script language="JavaScript">doStats('esmas');</script>
+<?php
+//-- Begin DAx code --
+path_include ("esmas_path/comscore/daxfooter.php");
+//-- End DAx code --
+?>
+</body>
+</html>
