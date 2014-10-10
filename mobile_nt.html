@@ -1,0 +1,299 @@
+<?php global $dax_type; ?>
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.2//EN"
+"http://www.openmobilealliance.org/tech/DTD/xhtml-mobile12.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title>{ART:article:TITLE:editorial=yes} :: Esmas Mujer</title>
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+	<meta http-equiv="CACHE-CONTROL" content="NO-CACHE" />
+	<meta http-equiv="PRAGMA" content="NO-CACHE" />
+	<meta http-equiv="EXPIRES" content="0" />
+	<meta http-equiv="CONTENT-TYPE" content="text/html; charset=ISO-8859-1" />
+	<meta name="COPYRIGHT" content="© 2010 Comercio Mas S.A. de C.V." />
+	<meta name="GENERATOR" content="GALAXY" />	
+	<meta name="Description" content="{ART:article:SUMMARY}" />
+	<meta name="Keywords" content="{ART:article:KEYWORDS}" />
+    <link rel="canonical" href="{ART:article:LINK}" />
+	<link rel="stylesheet" href="http://i2.esmas.com/mujer3/m/css/mobile_nt_mujer-2014.css" />
+	<link rel="stylesheet" href="http://i2.esmas.com/mujer3/m/css/menu_nav_nt_esmas_mujer.css" />
+	<link rel="stylesheet" type="text/css" href="http://i2.esmas.com/televisa/m/css/mobile_menu_superior_nav_5.css" />
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://i2.esmas.com/noticierostelevisa/m/js/jquery.mobile-1.0.1.min-nt-noticieros.js"></script>
+	<script src="http://i2.esmas.com/noticierostelevisa/m/js/jquery.fontSizer.js"></script>
+	<script src="http://i2.esmas.com/noticierostelevisa/m/js/iscroll-v3.js"></script>
+	<script type="text/javascript">
+		//Menu Nav
+		var myScroll, myScroll_2, myScroll_3;
+		function loaded(){
+			myScroll = new iScroll('wrapper', { hScrollbar: false});
+			myScroll_2 = new iScroll('wrapper_bottom', { hScrollbar: false});
+			myScroll_3 = new iScroll('wrapperMenuSup', { hScrollbar: false});
+		}
+		document.addEventListener('DOMContentLoaded', loaded, false);
+		
+		//Comentarios
+		function loadjs (url){
+			var sc = document.createElement('script');
+			sc.setAttribute('type', 'text/javascript');
+			sc.setAttribute('src', url);
+			var hd = document.getElementsByTagName('head')[0];
+			hd.appendChild(sc);
+			return true;
+		}
+		
+		$('#nota_terminal_mujer').live( 'pagebeforecreate',function(event){
+			loadjs('http://comentarios.esmas.com/js/comunidades.js');
+		});
+		
+		var comment_tpl='tdmobile';
+		
+		//Aumentar / Disminuir fuente
+		function resizeText(multiplier){
+			if (document.getElementById("txtNota").style.fontSize==""){
+				document.getElementById("txtNota").style.fontSize = "1.0em";
+			}
+			document.getElementById("txtNota").style.fontSize = parseFloat(document.getElementById("txtNota").style.fontSize) + (multiplier * 0.2) + "em";
+		}
+		
+		//Tabs Fotos
+		$(document).delegate('[data-role="navbar"] a', 'click', function(){
+			$(this).addClass('ui-btn-active');
+			$('.content_div').hide();
+			$('#' + $(this).attr('data-href')).show();
+		});
+	</script>
+	<style>
+	.content_div {
+		display: none;
+	}
+	
+	.content_div:first-child {
+		display: block;
+	}
+	</style>
+</head>
+<body>
+<?php
+//-- Begin DAx code --
+$dax_type = 'm';
+//path_include ("esmas_path/comscore/daxheader.php");
+include (PATH_CONTENT."comscore/daxheader.php");
+//-- End DAx code --
+?>
+<script type="text/javascript">
+	$('#wrapperMenuSup').bind(function(){
+				$('.arrowLeft').hide();
+				$('#scrollerMenuSup').taphold(function(){//Aqui tenía el evento mouseup
+					var pos_left = $('#scroller').offset();
+						if (pos_left.left < 0){
+							$('.arrowLeft').show(300);
+							$('.arrowRight').hide(300);
+						}
+						if (pos_left.left >= 1){
+							$('.arrowRight').toggle(300);
+							$('.arrowLeft').toggle(300);
+						}			
+				});
+			});
+</script>
+	<div data-role="page" data-theme="a" id="nota_terminal_mujer">
+        {SWITCH:START:COUNTRY_CODE}
+	{CASE:US}
+		<?php 
+			$colorTitulo = "mujer";
+			include '/nfs/content/headers/header_us_2014.php';				
+		?>
+	{CASE:BREAK} 		
+    {SWITCH:END}
+		<?php include('../iphone/mujer/banner_top_nt_320x50.php'); ?>
+		{SWITCH:START:COUNTRY_CODE}
+		{CASE:US}
+			
+		{CASE:BREAK} 
+		{CASE:DEFAULT}
+	<?
+		include '/nfs/cache/flat/mujer/mobile_menu_mujer_gral.html';
+?>
+<!--div data-role="header" >
+			<a href="http://m.esmas.com/mujer/" class="logo">
+				<img src="http://i2.esmas.com/mujer3/m/img/logoMobileNtMujer.png" border="0" width="150" height="40" alt="Esmas Mujer"/>
+			</a>
+		</div-->
+<div class="header_mujer" style="width:100%; height:42px; margin:0; background: url(http://i2.esmas.com/iphone/img/l_mujer-bg.png) repeat-x;">
+		<img src="http://i2.esmas.com/iphone/img/l_mujer.gif" width="320" height="42" alt="" border="0"> 
+	</div>
+
+    {CASE:BREAK}
+	{SWITCH:END}
+		
+<!-- /header -->
+		<div data-role="content" data-theme="a">
+            {SWITCH:START:COUNTRY_CODE}
+            {CASE:US}
+            {CASE:BREAK} 
+            {CASE:DEFAULT}
+            <?php include '../iphone/mujer/m_menu_top.php'; ?>
+            {CASE:BREAK}
+            {SWITCH:END}
+			<div id="contentArt">
+				<div class="content-title">
+					<div class="title-article"><h1>{ART:article:TITLE:editorial=yes}</h1></div>
+					<div class="textSize" data-type="horizontal" data-role="controlgroup">
+						<img data-theme="a" data-role="button" id="plustext" src="http://i2.esmas.com/televisa/m/img/m_icon_font_capital.png" width="17" height="14" alt="Aumentar Tamanio del Texto" onClick="resizeText(1)">
+						<img data-theme="a" data-role="button" id="minustext" src="http://i2.esmas.com/televisa/m/img/m_icon_font_regular.png" width="17" height="14" alt="Disminuir Tamanio del Texto" onClick="resizeText(-1)">
+					</div>
+				</div>
+				<div class="info-article">Por: {ART:article:AUTHOR} | Fuente: {ART:article:SOURCE} | {ART:article:CREATION:date_format=Y/m/d h;m}</div>
+				<div class="customNota_txt" id="txtNota">
+					<? if(trim($article->relations('type=img,width=370,height=270,link') ) != '') { ?>
+						<img src="{ART:article:RELATIONS:type=img,width=370,height=270,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
+					<? } elseif(trim($article->relations('type=img,width=610,height=250,link') ) != ''){ ?>
+						<img src="{ART:article:RELATIONS:type=img,width=610,height=250,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
+					<? } elseif(trim($article->relations('type=img,width=300,height=350,link') ) != ''){ ?>
+						<img src="{ART:article:RELATIONS:type=img,width=300,height=350,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
+					<? } ?>
+					{ART:article:CONTENT:replace_html=<br><p><a><ul><li>}
+				</div><!-- /txtNota -->
+				<div data-role="collapsible-set">
+					<!-- RELACIONADOS -->
+					{NOTEMPTY:ART:article:RELATIONS:type=ART[0],ID}
+					<div data-role="collapsible" data-iconpos="right" data-icon="arrow-d">
+						<h3>Relacionados</h3>
+						<ul data-role="listview" data-theme="d">
+							{NOTEMPTY:ART:article:RELATIONS:type=ART[0],LINK}
+							<li data-icon="arrow-d">
+								<?
+								$art1=$article->relations('type=art[0],link');
+								$art1= str_replace('http://noticierostelevisa.esmas.com', 'http://m.noticierostelevisa.esmas.com', $art1);
+								?>
+								<a class="article-rel" href="<?=$art1;?>" target="_blank">{ART:article:RELATIONS:type=ART[0],TITLE,editorial=yes} </a>
+							</li>
+							{EMPTY:END}	
+							{NOTEMPTY:ART:article:RELATIONS:type=ART[1],LINK}
+							<li data-icon="arrow-d">
+								<?
+								$art2=$article->relations('type=art[1],link');
+								$art2= str_replace('http://noticierostelevisa.esmas.com', 'http://m.noticierostelevisa.esmas.com', $art2);
+								?>
+								<a class="article-rel" href="<?=$art2;?>" target="_blank">{ART:article:RELATIONS:type=ART[1],TITLE,editorial=yes} </a>
+							</li>
+							{EMPTY:END}
+							{NOTEMPTY:ART:article:RELATIONS:type=ART[2],LINK}
+							<li data-icon="arrow-d">
+								<?
+								$art3=$article->relations('type=art[2],link');
+								$art3= str_replace('http://noticierostelevisa.esmas.com', 'http://m.noticierostelevisa.esmas.com', $art3);
+								?>
+								<a class="article-rel" href="<?=$art3;?>" target="_blank">{ART:article:RELATIONS:type=ART[2],TITLE,editorial=yes} </a>
+							</li>
+							{EMPTY:END}	
+						</ul>
+					</div>
+					{EMPTY:END}	
+					<!-- MANDA TU OPINION -->
+					<div data-role="collapsible" data-iconpos="right" data-icon="arrow-d" id="comunidades" refresh="true">
+						<h3>Manda tu opinión</h3>
+						<div id="COMM_comments"></div>
+					</div>
+					<!-- FOTOS -->
+					<?php include 'mobile_fotos_nt_mujer.php'; ?>
+					<!-- COMPARTIR -->
+					<div data-role="collapsible" data-iconpos="right" data-icon="arrow-d">
+						<h3>Compartir</h3>
+						<ul data-role="listview" data-theme="e" class="inlineList addthis_toolbox social-share">
+							<script type="text/javascript">
+								var addthis_config = {
+									ui_language: "es",
+									pubid: "ra-4f1071024a20d1ee",
+									data_track_clickback: false
+								}
+							</script>
+							<li data-icon="arrow-r">
+								<a href="http://mobile.twitter.com/home?status={ART:article:LINK:mobile}" rel="nofollow external" target="_blank" id="tw">Twitter</a>
+							</li>
+							<li data-icon="arrow-r">
+								<a href="http://m.facebook.com/sharer.php?u={ART:article:LINK:mobile}&amp;t={ART:article:TITLE:TEST}" rel="nofollow external" target="_blank" id="fb">Facebook</a>
+							</li>
+							<li>
+								<a id="email" class="addthis_button_email" addthis:title="{ART:article:TITLE:editorial=yes}">
+									<img class="ui-li-icon" src="http://i2.esmas.com/televisa/m/img/1312830647_email.png" alt="Email"> E-mail
+								</a>
+							</li>
+						</ul>
+						<script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js"></script>
+					</div>
+                    {SWITCH:START:COUNTRY_CODE}
+                    {CASE:US}
+                    {CASE:BREAK} 
+                    {CASE:DEFAULT}
+					<?php include '../iphone/mujer/m_secciones_mujer.php'; ?>
+					<?php include '../iphone/mujer/m_sitios_televisa.php'; ?>
+                    {CASE:BREAK}
+                    {SWITCH:END}
+				</div><!-- /collapsible-set -->
+				<div id="divBannerMiddleNt"><?php include('../iphone/mujer/banner_middle_nt_320x50.php'); ?></div>
+                
+                {SWITCH:START:COUNTRY_CODE}
+                {CASE:US}
+                     <?php include '/nfs/cache/flat/footers/footer-us-2014.html';?>
+                {CASE:BREAK} 
+                {CASE:DEFAULT}
+                    <?php include '../iphone/mujer/m_menu_bottom.php'; ?>
+				<!-- SEARCH -->
+				<form class="customSearch" target="_self" action="http://m.televisa.com/mobile_search.php" method="get">
+					<input data-theme="c" type="search" name="search" id="search" value="" />
+				</form>
+				<!-- footer -->
+				<div id="footer">
+					<div id="linksTw">
+						<div id="twNoticierosTelevisa">
+							<a href="https://twitter.com/#!/esmas_mujer" target="_blank">
+								<img src="http://i2.esmas.com/mujer3/m/img/mobile_tweet_nt_mujer.png" width="146" height="47" alt="Sigue en Twitter a Esmas Mujer" />
+							</a>
+						</div>
+						<div id="twTelevisa">
+							<a href="https://twitter.com/#!/televisadotcom/" target="_blank">
+								<img src="http://i2.esmas.com/mujer3/m/img/mobile_tweet_nt_televisa.png" width="146" height="47" alt="Sigue en Twitter a Televisa" />
+							</a>
+						</div>
+					</div>
+					<div id="linkHomeNormal">
+						<a href="#" id="linksNotaMovil">Versión móvil</a>
+						<a href="{ART:article:LINK}" id="linksNotaNormal" >| Versión web</a>
+					</div>
+					<div class="copy">
+						<a class="contact" href="http://www.esmas.com/showcase/home.html" target="_blank">Anúnciate</a> |
+						<a class="contact" href="mailto:imagencorporativa2@televisa.com.mx" target="_blank">Contáctanos</a> | 
+						<a class="contact" href="http://www.esmas.com/conveniousuario" target="_blank">Convenios de Usuario</a> | 
+						<a class="contact" href="http://www.esmas.com/politicaprivacidad" target="_blank">Políticas de Privacidad</a>
+						<p>Derechos reservados © Televisa S.A. de C.V. 2012</p>
+					</div>
+				</div>
+                    {CASE:BREAK}
+                {SWITCH:END}
+           
+			</div><!-- /contentArt -->
+		</div><!-- /content -->
+	</div>
+<script>
+var seccion = '<?php echo $colorTitulo; ?>';
+var sitiosAdaptative = true;
+</script>
+<script src="http://i2.esmas.com/js/televisa/us/copa-mundia-fifa-brasil-2014/header-copa-mundial.js"></script>
+<script>
+       $(function() {
+               $('.site_search > div[data-theme]="a"').removeClass('ui-btn ui-btn-corner-all ui-shadow ui-btn-up-a');
+               $('.site_search > div[data-theme]="a" > span').remove();
+               $('.site_search > div[data-theme]="a" .search_submit').removeClass('ui-btn-hidden');
+               $('.site_search .search_term').removeClass('ui-input-text ui-body-a ui-corner-all ui-shadow-inset');
+       });
+       
+</script>
+<?php
+//-- Begin DAx code --
+//path_include ("esmas_path/comscore/daxfooter.php");
+include (PATH_CONTENT."comscore/daxfooter.php");
+//-- End DAx code --
+?> <!-- dxc -->
+</body>
+</html>
