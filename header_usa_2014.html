@@ -1,0 +1,82 @@
+<link rel="stylesheet" href="http://i2.esmas.com/css/headers/usa-2014/estilos.css">
+<div class="header01">			
+	<div id="content-nav1">
+		<a href="http://www.televisa.com" class="nav_header_1_logotv" target="_blank" title="Televisa">
+			<span class="nav_header_01_sprite"></span>
+		</a>
+        {NOTEMPTY:HTM:menu_general_usa:CONTENT}
+			 {HTM:menu_general_usa:CONTENT}
+            {EMPTY:END}
+		<a href="#search" class="search">
+			<img src="http://i2.esmas.com/img/header-footer-usa/icono_lupa.png" border="0" width="12" height="12" class="lupa">
+		</a>
+		<div class="contenedor_form">
+			<form method="post" action="http://result.televisa.com/universal/" id="buscador">
+				<input type="text" placeholder="Ingrese su b&uacute;squeda" name="q" class="buscador">
+				<input type="hidden" name="url" value="http://result.televisa.com/noticierostelevisa/">        
+			</form>
+		</div>
+	</div>
+	<div class="nav_header_01_toggleable">
+		<div class="wrapper_toggleable menu-revistas">
+            {NOTEMPTY:HTM:menu_revistas:CONTENT}
+			 {HTM:menu_revistas:CONTENT}
+            {EMPTY:END}
+		</div>
+		<div class="wrapper_toggleable menu-vida-y-estilo">
+             {NOTEMPTY:HTM:menu_vida_estilo:CONTENT}
+			     {HTM:menu_vida_estilo:CONTENT}
+             {EMPTY:END}
+		</div>
+	</div>
+	<!--<div class="nav_header_02_toggleable">	
+	</div>-->
+	<div class="nav_header_01_section nav_header_01_news">
+		<h2 id="title-section"> </h2>
+		<div class="test">
+			<div class="nav_header_01_subsections">
+				{NOTEMPTY:HTM:menu_mujer:CONTENT}
+			     {HTM:menu_mujer:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:menu_salud:CONTENT}
+			     {HTM:menu_salud:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:menu_deportes:CONTENT}
+			     {HTM:menu_deportes:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:menu_telenovelas:CONTENT}
+			     {HTM:menu_telenovelas:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:menu_tecnologia:CONTENT}
+			     {HTM:menu_tecnologia:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:menu_espectaculos:CONTENT}
+			     {HTM:menu_espectaculos:CONTENT}
+                {EMPTY:END}
+			</div>
+			<div class="sections-dropdown-content">
+				<div class="nav_header_01_wrapper">
+					{NOTEMPTY:HTM:submenu_mujer:CONTENT}
+			     {HTM:submenu_mujer:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:submenu_salud:CONTENT}
+			     {HTM:submenu_salud:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:submenu_deportes:CONTENT}
+			     {HTM:submenu_deportes:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:submenu_telenovelas:CONTENT}
+			     {HTM:submenu_telenovelas:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:submenu_tecnologia:CONTENT}
+			     {HTM:submenu_tecnologia:CONTENT}
+                {EMPTY:END}
+                {NOTEMPTY:HTM:submenu_espectaculos:CONTENT}
+			     {HTM:submenu_espectaculos:CONTENT}
+                {EMPTY:END}
+				</div>
+			</div>					
+		</div>
+	</div>			
+</div>
+<script src="http://i2.esmas.com/js/headers/usa-2014/script_menu.js"></script>
