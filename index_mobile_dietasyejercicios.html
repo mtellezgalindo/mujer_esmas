@@ -61,6 +61,18 @@
 				});
 			});
 </script>
+<style>
+.headlinesThumbnail li h5 {
+	font: normal 10px/12px Helvetica;
+	color: #8493B2;
+}
+.headlinesThumbnail li h2 {
+	font: normal 14px/17px Helvetica;
+	color: #666666;
+	margin: 0 0 8px 0;
+}
+
+</style>
 <div id="wrapper" data-role="page">
     {SWITCH:START:COUNTRY_CODE}
 	{CASE:US}
@@ -90,53 +102,63 @@
 		<a href="http://www2.esmas.com/mujer/dietas-y-ejercicios/" title=""><img src="http://i2.esmas.com/iphone/img/bt_sitionormal.gif" width="110" height="25" alt="" border="0"></a>
 		<span><script>PrintDate();</script></span>
 	</div>
-	<ul class="headlines bkgArrow">
+	<ul class="headlinesThumbnail bkgArrow">
 		<li onClick="GoLink(this, '{ART:nota_princ:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:nota_princ:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nota_princ:TITLE:editorial=yes}" title="{ART:nota_princ:TITLE:editorial=yes}">			
 			<h2>{ART:nota_princ:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nota_princ:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 	</ul>
 	<div class="title">Nutrición</div>
-	<ul class="headlines bkgArrow">
+	<ul class="headlinesThumbnail bkgArrow">
 		<li onClick="GoLink(this, '{ART:nutricion_nota1:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:nutricion_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nutricion_nota1:TITLE:editorial=yes}" title="{ART:nutricion_nota1:TITLE:editorial=yes}">	
 			<h2>{ART:nutricion_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nutricion_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:nutricion_nota2:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:nutricion_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nutricion_nota2:TITLE:editorial=yes}" title="{ART:nutricion_nota2:TITLE:editorial=yes}">	
 			<h2>{ART:nutricion_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nutricion_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:nutricion_nota3:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:nutricion_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nutricion_nota3:TITLE:editorial=yes}" title="{ART:nutricion_nota3:TITLE:editorial=yes}">
 			<h2>{ART:nutricion_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nutricion_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 	</ul>
 	<div class="title">En Forma</div>
-	<ul class="headlines bkgArrow">
+	<ul class="headlinesThumbnail bkgArrow">
 		<li onClick="GoLink(this, '{ART:enforma_nota1:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:enforma_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:enforma_nota1:TITLE:editorial=yes}" title="{ART:enforma_nota1:TITLE:editorial=yes}">
 			<h2>{ART:enforma_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:enforma_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:enforma_nota2:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:enforma_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:enforma_nota2:TITLE:editorial=yes}" title="{ART:enforma_nota2:TITLE:editorial=yes}">
 			<h2>{ART:enforma_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:enforma_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:enforma_nota3:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:enforma_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:enforma_nota3:TITLE:editorial=yes}" title="{ART:enforma_nota3:TITLE:editorial=yes}">
 			<h2>{ART:enforma_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:enforma_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>
 	</ul>
 	<div class="title">Cuerpo y Mente</div>
-	<ul class="headlines bkgArrow">
+	<ul class="headlinesThumbnail bkgArrow">
 		<li onClick="GoLink(this, '{ART:cym_nota1:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:cym_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:cym_nota1:TITLE:editorial=yes}" title="{ART:cym_nota1:TITLE:editorial=yes}">
 			<h2>{ART:cym_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:cym_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:cym_nota2:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:cym_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:cym_nota2:TITLE:editorial=yes}" title="{ART:cym_nota2:TITLE:editorial=yes}">
 			<h2>{ART:cym_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:cym_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:cym_nota3:LINK:mobile}');">
+			<img width="120" height="90" src="{ART:cym_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:cym_nota3:TITLE:editorial=yes}" title="{ART:cym_nota3:TITLE:editorial=yes}">
 			<h2>{ART:cym_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:cym_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>

@@ -1,0 +1,269 @@
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //      Styles
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    <link rel='stylesheet' id='camera-css'  href='http://i2.esmas.com/0117/css/camera.css' type='text/css' media='all'> 
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            color: #09f;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        #back_to_camera {
+            clear: both;
+            display: block;
+            height: 80px;
+            line-height: 40px;
+            padding: 20px;
+        }
+        .fluid_container {
+            margin: 0 auto;
+            
+            width:100%;
+        }
+        .pag{
+            float: right;
+        }
+    </style>
+
+    <!--///////////////////////////////////////////////////////////////////////////////////////////////////
+    //
+    //      Scripts
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////////////////--> 
+    
+    <script type='text/javascript' src='http://i2.esmas.com/0117/js/jquery.min.js'></script>
+   <script type='text/javascript' src='http://i2.esmas.com/0117/js/jquery.mobile.customized.min.js'></script>
+    <script type='text/javascript' src='http://i2.esmas.com/0117/js/jquery.easing.1.3.js'></script> 
+    <script type='text/javascript' src='http://i2.esmas.com/0117/js/camera.min.js'></script> 
+    
+    
+    <script>
+
+        jQuery(function(){
+            
+            jQuery('#camera_wrap_1').camera({
+                thumbnails: false,
+                pagination: false,
+                loader: 'none',
+                playPause: false,
+                fx:'scrollLeft',
+                time: 7000
+
+            });
+
+            var divss = 1;
+            jQuery(function(){
+               var total = jQuery("#camera_wrap_1 .esto").size(); 
+               var totalfinal = total;
+               jQuery("#camera_wrap_1 .esto").each(function(){
+                    jQuery('.camera_caption').find('#aqui'+divss).append('<span>'+ divss+'/</span><span>'+totalfinal+'</span>');
+                    divss++;
+               });
+
+            }); 
+        });
+    </script>
+
+
+    
+    <div class="fluid_container">
+        <div class="camera_wrap camera_azure_skin" id="camera_wrap_1">
+
+            {NOTEMPTY:ART:nota_1:id}
+                <div data-thumb="{NOTEMPTY:ART:nota_1:RELATIONS:type=img,link,width=122,height=67}{ART:nota_1:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_1:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_1:RELATIONS:type=img,link,width=122,height=67}{ART:nota_1:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_1:RELATIONS:type=img,link,width=610,height=339}{ART:nota_1:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_1->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom nota_1">
+
+
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_1->link()); ?>" title="{ART:nota_1:TITLE:editorial=yes}" alt="{ART:nota_1:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_1_titulo:CAPTION}{LBL:nota_1_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_1:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui1" class="pag"></div>
+                        
+                    </div>
+                </div>
+            {EMPTY:END}
+
+            {NOTEMPTY:ART:nota_2:id}
+                <div data-thumb="{NOTEMPTY:ART:nota_2:RELATIONS:type=img,link,width=122,height=67}{ART:nota_2:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_2:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_2:RELATIONS:type=img,link,width=122,height=67}{ART:nota_2:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_2:RELATIONS:type=img,link,width=610,height=339}{ART:nota_2:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_2->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_2->link()); ?>" title="{ART:nota_2:TITLE:editorial=yes}" alt="{ART:nota_2:TITLE:editorial=yes}" class="slice">{NOTEMPTY:LBL:nota_2_titulo:CAPTION}{LBL:nota_2_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_2:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui2" class="pag"></div>
+                        
+                    </div>
+                </div>
+           {EMPTY:END}
+            {NOTEMPTY:ART:nota_3:id}
+                <div data-thumb="{NOTEMPTY:ART:nota_3:RELATIONS:type=img,link,width=122,height=67}{ART:nota_3:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_3:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_3:RELATIONS:type=img,link,width=122,height=67}{ART:nota_3:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_3:RELATIONS:type=img,link,width=610,height=339}{ART:nota_3:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_3->link()); ?>" class="esto" >
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_3->link()); ?>" title="{ART:nota_3:TITLE:editorial=yes}" alt="{ART:nota_3:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_3_titulo:CAPTION}{LBL:nota_3_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_3:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui3" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_4:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_4:RELATIONS:type=img,link,width=122,height=67}{ART:nota_4:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_4:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_4:RELATIONS:type=img,link,width=122,height=67}{ART:nota_4:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_4:RELATIONS:type=img,link,width=610,height=339}{ART:nota_4:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_4->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_4->link()); ?>" title="{ART:nota_4:TITLE:editorial=yes}" alt="{ART:nota_4:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_4_titulo:CAPTION}{LBL:nota_4_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_4:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui4" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_5:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_5:RELATIONS:type=img,link,width=122,height=67}{ART:nota_5:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_5:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_5:RELATIONS:type=img,link,width=122,height=67}{ART:nota_5:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_5:RELATIONS:type=img,link,width=610,height=339}{ART:nota_5:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_5->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_5->link()); ?>" title="{ART:nota_5:TITLE:editorial=yes}" alt="{ART:nota_5:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_5_titulo:CAPTION}{LBL:nota_5_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_5:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui5" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_6:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_6:RELATIONS:type=img,link,width=122,height=67}{ART:nota_6:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_6:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_6:RELATIONS:type=img,link,width=122,height=67}{ART:nota_6:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_6:RELATIONS:type=img,link,width=610,height=339}{ART:nota_6:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_6->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_6->link()); ?>" title="{ART:nota_6:TITLE:editorial=yes}" alt="{ART:nota_6:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_6_titulo:CAPTION}{LBL:nota_6_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_6:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui6" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_7:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_7:RELATIONS:type=img,link,width=122,height=67}{ART:nota_7:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_7:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_7:RELATIONS:type=img,link,width=122,height=67}{ART:nota_7:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_7:RELATIONS:type=img,link,width=610,height=339}{ART:nota_7:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_7->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_7->link()); ?>" title="{ART:nota_7:TITLE:editorial=yes}" alt="{ART:nota_7:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_7_titulo:CAPTION}{LBL:nota_7_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_7:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui7" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_8:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_8:RELATIONS:type=img,link,width=122,height=67}{ART:nota_8:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_8:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_8:RELATIONS:type=img,link,width=122,height=67}{ART:nota_8:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_8:RELATIONS:type=img,link,width=610,height=339}{ART:nota_8:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_8->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_8->link()); ?>" title="{ART:nota_8:TITLE:editorial=yes}" alt="{ART:nota_8:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_8_titulo:CAPTION}{LBL:nota_8_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_8:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui8" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_9:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_9:RELATIONS:type=img,link,width=122,height=67}{ART:nota_9:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_9:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_9:RELATIONS:type=img,link,width=122,height=67}{ART:nota_9:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_9:RELATIONS:type=img,link,width=610,height=339}{ART:nota_9:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_9->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_9->link()); ?>" title="{ART:nota_9:TITLE:editorial=yes}" alt="{ART:nota_9:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_9_titulo:CAPTION}{LBL:nota_9_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_9:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui9" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_10:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_10:RELATIONS:type=img,link,width=122,height=67}{ART:nota_10:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_10:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_10:RELATIONS:type=img,link,width=122,height=67}{ART:nota_10:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_10:RELATIONS:type=img,link,width=610,height=339}{ART:nota_10:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_10->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_10->link()); ?>" title="{ART:nota_10:TITLE:editorial=yes}" alt="{ART:nota_10:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_10_titulo:CAPTION}{LBL:nota_10_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_10:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui10" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_11:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_11:RELATIONS:type=img,link,width=122,height=67}{ART:nota_11:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_11:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_11:RELATIONS:type=img,link,width=122,height=67}{ART:nota_11:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_11:RELATIONS:type=img,link,width=610,height=339}{ART:nota_11:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_11->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_11->link()); ?>" title="{ART:nota_11:TITLE:editorial=yes}" alt="{ART:nota_11:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_11_titulo:CAPTION}{LBL:nota_11_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_11:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui11" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_12:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_12:RELATIONS:type=img,link,width=122,height=67}{ART:nota_12:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_12:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_12:RELATIONS:type=img,link,width=122,height=67}{ART:nota_12:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_12:RELATIONS:type=img,link,width=610,height=339}{ART:nota_12:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_12->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_12->link()); ?>" title="{ART:nota_12:TITLE:editorial=yes}" alt="{ART:nota_12:TITLE:editorial=yes}" class="slice">{NOTEMPTY:LBL:nota_12_titulo:CAPTION}{LBL:nota_12_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_12:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui12" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_13:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_13:RELATIONS:type=img,link,width=122,height=67}{ART:nota_13:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_13:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_13:RELATIONS:type=img,link,width=122,height=67}{ART:nota_13:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_13:RELATIONS:type=img,link,width=610,height=339}{ART:nota_13:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_13->link()); ?>" class="esto"> 
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_13->link()); ?>" title="{ART:nota_13:TITLE:editorial=yes}" alt="{ART:nota_13:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_13_titulo:CAPTION}{LBL:nota_13_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_13:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui13" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_14:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_14:RELATIONS:type=img,link,width=122,height=67}{ART:nota_14:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_14:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_14:RELATIONS:type=img,link,width=122,height=67}{ART:nota_14:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_14:RELATIONS:type=img,link,width=610,height=339}{ART:nota_14:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_14->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_14->link()); ?>" title="{ART:nota_14:TITLE:editorial=yes}" alt="{ART:nota_14:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_14_titulo:CAPTION}{LBL:nota_14_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_14:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui14" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_15:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_15:RELATIONS:type=img,link,width=122,height=67}{ART:nota_15:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_15:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_15:RELATIONS:type=img,link,width=122,height=67}{ART:nota_15:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_15:RELATIONS:type=img,link,width=610,height=339}{ART:nota_15:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_15->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_15->link()); ?>" title="{ART:nota_15:TITLE:editorial=yes}" alt="{ART:nota_15:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_15_titulo:CAPTION}{LBL:nota_15_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_15:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui15" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_16:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_16:RELATIONS:type=img,link,width=122,height=67}{ART:nota_16:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_16:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_16:RELATIONS:type=img,link,width=122,height=67}{ART:nota_16:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_16:RELATIONS:type=img,link,width=610,height=339}{ART:nota_16:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_16->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_16->link()); ?>" title="{ART:nota_16:TITLE:editorial=yes}" alt="{ART:nota_16:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_16_titulo:CAPTION}{LBL:nota_16_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_16:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui16" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_17:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_17:RELATIONS:type=img,link,width=122,height=67}{ART:nota_17:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_17:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_17:RELATIONS:type=img,link,width=122,height=67}{ART:nota_17:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_17:RELATIONS:type=img,link,width=610,height=339}{ART:nota_17:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_17->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_17->link()); ?>" title="{ART:nota_17:TITLE:editorial=yes}" alt="{ART:nota_17:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_17_titulo:CAPTION}{LBL:nota_17_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_17:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui17" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_18:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_18:RELATIONS:type=img,link,width=122,height=67}{ART:nota_18:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_18:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_18:RELATIONS:type=img,link,width=122,height=67}{ART:nota_18:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_18:RELATIONS:type=img,link,width=610,height=339}{ART:nota_18:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_18->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_18->link()); ?>" title="{ART:nota_18:TITLE:editorial=yes}" alt="{ART:nota_18:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_18_titulo:CAPTION}{LBL:nota_18_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_18:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui18" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_19:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_19:RELATIONS:type=img,link,width=122,height=67}{ART:nota_19:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_19:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_19:RELATIONS:type=img,link,width=122,height=67}{ART:nota_19:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_19:RELATIONS:type=img,link,width=610,height=339}{ART:nota_19:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_19->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_19->link()); ?>" title="{ART:nota_19:TITLE:editorial=yes}" alt="{ART:nota_19:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_19_titulo:CAPTION}{LBL:nota_19_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_19:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui19" class="pag"></div>
+                       
+                    </div>
+                </div>
+            {EMPTY:END}
+            {NOTEMPTY:ART:nota_20:id}
+                 <div data-thumb="{NOTEMPTY:ART:nota_20:RELATIONS:type=img,link,width=122,height=67}{ART:nota_20:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" alt="{ART:nota_20:TITLE:editorial=yes}" data-thumbimg="{NOTEMPTY:ART:nota_20:RELATIONS:type=img,link,width=122,height=67}{ART:nota_20:RELATIONS:type=img,link,width=122,height=67}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_thumb.jpg{EMPTY:END}" data-src="{NOTEMPTY:ART:nota_20:RELATIONS:type=img,link,width=610,height=339}{ART:nota_20:RELATIONS:type=img,link,width=610,height=339}{EMPTY:ELSE}http://i2.esmas.com/canal30/img/no_stage.jpg{EMPTY:END}" data-link ="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_20->link()); ?>" class="esto">
+                    <div class="camera_caption fadeFromBottom">
+                       
+                            <a href="<?= str_replace('http://www2.esmas.com', 'http://m.esmas.com',$nota_20->link()); ?>" title="{ART:nota_20:TITLE:editorial=yes}" alt="{ART:nota_20:TITLE:editorial=yes}">{NOTEMPTY:LBL:nota_20_titulo:CAPTION}{LBL:nota_20_titulo:CAPTION}{EMPTY:ELSE}{ART:nota_20:TITLE:editorial=yes}{EMPTY:END}</a><div id="aqui20" class="pag"></div>
+                       
+                    </div>
+                </div>                
+            {EMPTY:END}
+           
+        </div><!-- #camera_wrap_1 -->
+
+    
+    </div><!-- .fluid_container -->
+<script>
+    jQuery('.slice').slice(0,4);
+</script>

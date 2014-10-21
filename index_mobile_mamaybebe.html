@@ -68,18 +68,6 @@
 				});
 			});
 </script>
-<style>
-.headlinesThumbnail li h5 {
-	font: normal 10px/12px Helvetica;
-	color: #8493B2;
-}
-.headlinesThumbnail li h2 {
-	font: normal 14px/17px Helvetica;
-	color: #666666;
-	margin: 0 0 8px 0;
-}
-
-</style>
 <div id="wrapper" data-role="page">
     {SWITCH:START:COUNTRY_CODE}
 	{CASE:US}
@@ -109,63 +97,53 @@
 		<a href="http://www2.esmas.com/mujer/mama-y-bebe/" title=""><img src="http://i2.esmas.com/iphone/img/bt_sitionormal.gif" width="110" height="25" alt="" border="0"></a>
 		<span><script>PrintDate();</script></span>
 	</div>
-	<ul class="headlinesThumbnail bkgArrow">
+	<ul class="headlines bkgArrow">
 		<li onClick="GoLink(this, '{ART:nota_princ:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:nota_princ:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nota_princ:TITLE:editorial=yes}" title="{ART:nota_princ:TITLE:editorial=yes}">	
 			<h2>{ART:nota_princ:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nota_princ:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 	</ul>
 	<div class="title">La Mamá</div>
-	<ul class="headlinesThumbnail bkgArrow">
+	<ul class="headlines bkgArrow">
 		<li onClick="GoLink(this, '{ART:mama_nota1:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:mama_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:mama_nota1:TITLE:editorial=yes}" title="{ART:mama_nota1:TITLE:editorial=yes}">	
 			<h2>{ART:mama_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:mama_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:mama_nota2:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:mama_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:mama_nota2:TITLE:editorial=yes}" title="{ART:mama_nota2:TITLE:editorial=yes}">	
 			<h2>{ART:mama_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:mama_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:mama_nota3:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:mama_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:mama_nota3:TITLE:editorial=yes}" title="{ART:mama_nota3:TITLE:editorial=yes}">
 			<h2>{ART:mama_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:mama_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>
 	</ul>
 	<div class="title">El Bebé</div>
-	<ul class="headlinesThumbnail bkgArrow">
+	<ul class="headlines bkgArrow">
 		<li onClick="GoLink(this, '{ART:bebe_nota1:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:bebe_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:bebe_nota1:TITLE:editorial=yes}" title="{ART:bebe_nota1:TITLE:editorial=yes}">
 			<h2>{ART:bebe_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:bebe_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:bebe_nota2:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:bebe_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:bebe_nota2:TITLE:editorial=yes}" title="{ART:bebe_nota2:TITLE:editorial=yes}">
 			<h2>{ART:bebe_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:bebe_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:bebe_nota3:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:bebe_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:bebe_nota3:TITLE:editorial=yes}" title="{ART:bebe_nota3:TITLE:editorial=yes}">
 			<h2>{ART:bebe_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:bebe_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>
 	</ul>
 	<div class="title">El Niño Pequeño</div>
-	<ul class="headlinesThumbnail bkgArrow">
+	<ul class="headlines bkgArrow">
 		<li onClick="GoLink(this, '{ART:nino_nota1:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:nino_nota1:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nino_nota1:TITLE:editorial=yes}" title="{ART:nino_nota1:TITLE:editorial=yes}">
 			<h2>{ART:nino_nota1:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nino_nota1:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li onClick="GoLink(this, '{ART:nino_nota2:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:nino_nota2:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nino_nota2:TITLE:editorial=yes}" title="{ART:nino_nota2:TITLE:editorial=yes}">
 			<h2>{ART:nino_nota2:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nino_nota2:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>	
 		<li class="noBottom" onClick="GoLink(this, '{ART:nino_nota3:LINK:mobile}');">
-			<img width="120" height="90" src="{ART:nino_nota3:RELATIONS:type=img[0],link,width=120,height=90}" alt="{ART:nino_nota3:TITLE:editorial=yes}" title="{ART:nino_nota3:TITLE:editorial=yes}">
 			<h2>{ART:nino_nota3:TITLE:editorial=yes}</h2>
 			<h5>Hace {ART:nino_nota3:DURATION:anio/mes/dia/hora/min}</h5>
 		</li>
@@ -185,7 +163,7 @@
 	<?php include_once '../../iphone/mujer/mama-y-bebe/banner_flotante_320x44.php'; ?>
 </div>
 <script>
-var seccion = '<?php $colorTitulo = "mujer"; echo $colorTitulo; ?>';
+var seccion = '<?php echo $colorTitulo; ?>';
 var sitiosAdaptative = true;
 </script>
 <script src="http://i2.esmas.com/js/televisa/us/copa-mundia-fifa-brasil-2014/header-copa-mundial.js"></script>
@@ -198,4 +176,3 @@ var sitiosAdaptative = true;
 //-- End DAx code --
 ?>
 </body>
-</html>

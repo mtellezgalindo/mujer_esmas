@@ -151,7 +151,9 @@ include (PATH_CONTENT."comscore/daxheader.php");
 						<img src="{ART:article:RELATIONS:type=img,width=610,height=250,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
 					<? } elseif(trim($article->relations('type=img,width=300,height=350,link') ) != ''){ ?>
 						<img src="{ART:article:RELATIONS:type=img,width=300,height=350,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
-					<? } ?>
+					<? } elseif (trim($article->relations('type=img,width=300,height=380,link') ) != ''){ ?>
+						<img src="{ART:article:RELATIONS:type=img,width=300,height=380,LINK:mobile}" alt="{ART:article:TITLE:editorial=yes}" title="{ART:article:TITLE:editorial=yes}" class="articlePicture">
+					<? }?>
 					{ART:article:CONTENT:replace_html=<br><p><a><ul><li>}
 				</div><!-- /txtNota -->
 				<div data-role="collapsible-set">

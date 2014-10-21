@@ -1,0 +1,183 @@
+<?php
+	include PATH_GALLERIES.'dbConn_galleries.php';
+	include PATH_GALLERIES.'galleries.php';
+	openConn();
+// global $Ringo; include 'ringo.config.php'; if (!$Ringo->ifTemplateCacheStart('0113',489)){  	
+?>
+			<div data-role="navbar" id="tabs">
+					<ul>
+						<li><a href="#fotos" class="ui-btn-active" id="link-fotos">Fotos</a></li>
+						<li><a href="#mas-vistas" id="link-mas-vistas">Mas Vistas</a></li>
+						<li><a href="#mas-comentadas" id="link-mas-comentadas">Mas Comentadas</a></li>
+					</ul><!--Termina menu de pestanyas-->	
+					<div class="content-galleries">
+					<div id="fotos">
+<?php
+//Farandula id:48
+						$cont=1;
+						$sql="SELECT id_galeria,thumbnail_url,titulo_galeria,url_galeria,f_creacion,f_modificacion,f_publicacion,url_web FROM galerias where activo=0 and id_canal=48 order by f_modificacion DESC limit 9";
+						$result = mysql_query($sql);
+						while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+							echo "<pre>"; print_r($row['id_galeria']); echo "</pre>";
+
+							if ($row['url_web']=="" || $row['url_web']==null) { 
+								$url_foto="http://www.esmas.com/".$row['url_galeria']; 
+							}
+							else { 
+								$url_foto=$row['url_web']; 
+							}
+							$find     = 'http://televisa.esmas.com/entretenimiento/telenovelas/';
+							$find2      = 'http://especiales.televisa.com/';
+							$dominio1 = substr ($url_foto, 0, 54);
+							?><!-- Dominio 1: <?=$dominio1;?> --><?
+							$dominio2 = substr ($url_foto, 0, 31);
+							?><!-- Dominio 2: <?=$dominio2;?> --><?
+							if($dominio1 == $find){
+							  $url_mov  =str_replace($find, 'http://m.telenovelas.televisa.com/entretenimiento/telenovelas/', $url_foto);
+							}else if ($dominio2 == $find2){
+							  $url_mov  =str_replace($find2, 'http://m.especiales.televisa.com/', $url_foto);
+							}else{
+							  $url_mov  =str_replace('http://www2.esmas.com/', 'http://m.esmas.com/', $url_foto);
+							}
+?>							
+
+
+
+							<!--<a href="http://m.esmas.com/espectaculos/fotos/iphone/galerias/<?=$row['id_galeria'];?>" class="go-gallery">-->
+							<a href="<?= $url_mov ?>" class="go-gallery">
+
+								<img src="<?=$row['thumbnail_url'];?>" alt="<?=$row['titulo_galeria'];?>" />
+								<span class="gal-title"><?=substr($row['titulo_galeria'], 0, 18);?>...</span>
+							</a>
+					
+<?php
+						$cont++;
+}
+?>
+					</div><!--Termina el div de fotos-->
+					
+					<div id="mas-vistas">
+					
+			<?php
+
+					$arr_urls = array();
+					$i=0;
+					$objDOM = new DOMDocument(); 
+					$objDOM->load("http://comentarios.esmas.com/apis/readPhotos.php?type=entretenimiento&orderby=views&format=xml"); //make sure path is correct 
+					$photos = $objDOM->getElementsByTagName('photos'); 
+
+
+					$limit=8;
+					for ($i;$i<=$limit;$i++){
+						foreach( $photos as $link ) 
+						{
+							$urls = $link->getElementsByTagName('url');	
+							$url = trim($urls->item($i)->nodeValue);
+						}
+						$arr_urls[$i] = $url;
+						//echo "<p>Url $i es = $arr_urls[$i]</p> ";
+					}
+					$num_links= sizeof($arr_urls);
+					//echo "<h3>este es el tamaño del array en total $num_links</h3>";
+					for ($j=0; $j<=($num_links-1); $j++){
+						$id=$arr_urls[$j];
+						$array_parse= parse_url($id);
+						$path1= $array_parse['path'];
+						$path_seg= preg_split("/\//",$path1); 
+						$id_link = $path_seg[5];
+						$ids_array[$j]=$id_link;
+						
+						
+					}
+					echo "<pre>";print_r($ids_arrays);echo "</pre>";
+					echo "<!-- id's de las galerias + vistas: $ids_array[0], $ids_array[1], $ids_array[2], $ids_array[3], $ids_array[4], $ids_array[5], $ids_array[6], $ids_array[7], $ids_array[8] -->";
+
+
+//-----------------Lo + visto
+						$cont=1;
+						$sql="SELECT id_galeria,thumbnail_url,titulo_galeria,url_galeria,f_creacion,f_modificacion,f_publicacion,url_web FROM galerias where activo=0 and id_galeria in ($ids_array[0],$ids_array[1],$ids_array[2],$ids_array[3],$ids_array[4],$ids_array[5],$ids_array[6],$ids_array[7],$ids_array[8])";
+						$result = mysql_query($sql);
+						while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+							if ($row['url_web']=="" || $row['url_web']==null) { 
+								$url_foto="http://www.esmas.com/".$row['url_galeria']; 
+							}
+							else { 
+								$url_foto=$row['url_web']; 
+							}
+?>
+							<a href="http://m.esmas.com/espectaculos/fotos/iphone/galerias/<?=$row['id_galeria'];?>" class="go-gallery">
+								<img src="<?=$row['thumbnail_url'];?>" alt="<?=$row['titulo_galeria'];?>" />
+								<span class="gal-title"><?=substr($row['titulo_galeria'], 0, 18);?>...</span>
+							</a>
+<?						$cont++;
+						}
+?>
+						</div> <!--Termina el div de las mas vistas -->
+						
+											
+						
+						
+						
+						
+						
+					
+					<div id="mas-comentadas">
+<?php
+	$arr_urls = array();
+					$i=0;
+					$objDOM = new DOMDocument(); 
+					$objDOM->load("http://comentarios.esmas.com/apis/readPhotos.php?type=entretenimiento&orderby=comments&format=xml"); //make sure path is correct 
+					$photos = $objDOM->getElementsByTagName('photos'); 
+
+
+					$limit=3;
+					for ($i;$i<=$limit;$i++){
+						foreach( $photos as $link ) 
+						{
+							$urls = $link->getElementsByTagName('url');	
+							$url = trim($urls->item($i)->nodeValue);
+						}
+						$arr_urls[$i] = $url;
+						//echo "<p>Url $i es = $arr_urls[$i]</p> ";
+					}
+					$num_links= sizeof($arr_urls);
+					//echo "<h3>este es el tamaño del array en total $num_links</h3>";
+					for ($j=0; $j<=($num_links-1); $j++){
+						$id=$arr_urls[$j];
+						$array_parse= parse_url($id);
+						$path1= $array_parse['path'];
+						$path_seg= preg_split("/\//",$path1); 
+						$id_link = $path_seg[5];
+						$ids_array[$j]=$id_link;
+						
+						echo "<!-- id's de las galerias + comentadas: $ids_array[$j]-->";
+					}
+					echo "<!-- id's de las galerias + comentadas: $ids_array[0], $ids_array[1], $ids_array[2], $ids_array[3] -->";
+
+
+						$cont=1;
+						$sql="SELECT id_galeria,thumbnail_url,titulo_galeria,url_galeria,f_creacion,f_modificacion,f_publicacion,url_web FROM galerias where activo=0 and id_galeria in ($ids_array[0],$ids_array[1],$ids_array[2],$ids_array[3])";
+						$result = mysql_query($sql);
+						while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+							if ($row['url_web']=="" || $row['url_web']==null) { 
+								$url_foto="http://www.esmas.com/".$row['url_galeria']; 
+							}
+							else { 
+								$url_foto=$row['url_web']; 
+							}
+?>
+							<a href="http://m.esmas.com/espectaculos/fotos/iphone/galerias/<?=$row['id_galeria'];?>" class="go-gallery">
+								<img src="<?=$row['thumbnail_url'];?>" alt="<?=$row['titulo_galeria'];?>" />
+								<span class="gal-title"><?=substr($row['titulo_galeria'], 0, 18);?>...</span>
+							</a>
+<?php
+						$cont++;
+}
+?>
+						</div><!--Termina las mas comentadas-->
+					</div><!--Termina tabs gallery-->
+				</div><!-- /navbar -->
+<?php
+closeConn();
+//$Ringo->templateCacheFinish();
+?>
